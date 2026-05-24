@@ -1,6 +1,7 @@
 class RootContainer():
     def __init__(self):
         self.children = []
+        self.killScheduleQueue = []
 
     def Awake(self):
         pass
@@ -75,3 +76,6 @@ class RootContainer():
             newComponent.set_name(name)
         if parent:
             newComponent.set_parent(parent)
+
+    def scheduleForKilling(self, component):
+        self.killScheduleQueue.append(component)

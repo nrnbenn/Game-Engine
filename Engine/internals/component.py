@@ -7,6 +7,8 @@ class Component():
         self.parent = parent
         self.rootContainer = parent
         self.interface = Interface(self)
+        self.isAlive = True
+        self.killCallbacks= []
 
     def add_child(self, child):
         self.children.append(child)
@@ -30,6 +32,12 @@ class Component():
         self.interface.update()
     def Update(self):
         pass
+
+    def kill(self):
+        self.isAlive = False
+        self.rootContainer.scheduleForKilling(self)
+        for callback in self.killCallbacks:
+            callback()
 
     def getChildByName(self, name, recursive=False): #returns first one it finds
         result = self.getChildrenByName(name, recursive=recursive)
