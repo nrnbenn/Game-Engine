@@ -5,6 +5,7 @@ class Interface():
 
     def add_parameter(self, parameter):
         self.parameters.append(parameter)
+        parameter.interface = self
 
     def update(self):
         for parameter in self.parameters:
