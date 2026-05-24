@@ -1,0 +1,4 @@
+- PARAMATERS:
+	- component = component to schedule for killing
+-
+- Schedules a component for killing at the end of the clock cycle.

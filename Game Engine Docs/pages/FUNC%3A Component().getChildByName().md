@@ -1,0 +1,5 @@
+- PARAMETERS:
+	- name = name to search for
+	- recursive = whether to recurse through all following children (default false)
+-
+- Searches for [[OBJ: Component()]] with name name and returns the first one it finds. If recursive = True, then it will carry on through all children, and children of children, and so on.

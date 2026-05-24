@@ -1,0 +1,5 @@
+- PARAMETERS:
+	- type = type to search for
+	- recursive = whether to recurse through children (default False)
+-
+- Similar to [[FUNC: Component().getChildrenByName()]] but with types.

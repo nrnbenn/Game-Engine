@@ -1,0 +1,1 @@
+- A list of callbacks that are called when the component is killed with [[FUNC: Component().kill()]].

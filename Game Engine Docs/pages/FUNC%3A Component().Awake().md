@@ -1,0 +1,1 @@
+- Called when all the objects that are in the scene have been initialised.

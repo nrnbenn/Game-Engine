@@ -1,0 +1,1 @@
+- The [[OBJ: Interface()]] of the current component.

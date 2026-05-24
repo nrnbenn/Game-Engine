@@ -1,0 +1,1 @@
+- Similar to [[FUNC: Component().getChildrenByType()]]

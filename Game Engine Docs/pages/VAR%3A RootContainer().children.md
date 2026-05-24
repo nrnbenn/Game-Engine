@@ -1,0 +1,1 @@
+- Similar to [[VAR: Component().children]]

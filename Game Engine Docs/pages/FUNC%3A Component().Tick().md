@@ -1,0 +1,1 @@
+- Called every game tick both when the game is not running and the game is running.

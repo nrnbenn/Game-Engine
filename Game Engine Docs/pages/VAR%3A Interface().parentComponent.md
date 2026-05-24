@@ -1,0 +1,1 @@
+- The [[OBJ: Component()]] that the interface is linked to.

@@ -1,0 +1,5 @@
+- PARAMETERS:
+	- parent - new parent
+-
+- Removes the component from the current parent's [[VAR: Component().children]] and adds it to the parent from the parent parameter's [[VAR: Component().children]]. Also sets [[VAR: Component().parent]] to the new parent.
+-

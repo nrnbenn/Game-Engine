@@ -1,0 +1,1 @@
+- A list of [[OBJ: Component()]] that are killed at the end of each clock cycle.

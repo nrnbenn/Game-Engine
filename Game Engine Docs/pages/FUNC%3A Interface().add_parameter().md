@@ -1,0 +1,4 @@
+- PARAMETERS:
+	- parameter = the parameter to add
+-
+- Adds a parameter to [[VAR: Interface().parameters]]

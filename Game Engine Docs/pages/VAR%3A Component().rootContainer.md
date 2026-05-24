@@ -1,0 +1,2 @@
+- The [[OBJ: RootContainer()]] of the active game. This is set from the parent which is always a [[OBJ: RootContainer()]] as [[OBJ: Component()]] are instantiated from [[OBJ: RootContainer()]].
+-

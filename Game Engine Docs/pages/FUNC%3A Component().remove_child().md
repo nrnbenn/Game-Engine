@@ -1,0 +1,6 @@
+- PARAMETERS:
+	- child - child to remove
+-
+- Removes a child from the component object. The child to remove is from the child parameter.
+-
+- Similar to [[FUNC: Component().add_child()]]

@@ -1,0 +1,6 @@
+- PARAMETERS:
+	- component - component to instantiate
+	- name - name to name the new component (Default None)
+	- parent - parent to give to the new component (Default None)
+-
+- Instantiates a new component with the name of the component class, and the parent as the [[OBJ: RootContainer()]] of the current game, unless the parameters are not default.

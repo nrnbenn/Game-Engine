@@ -1,0 +1,4 @@
+- PARAMETER:
+	- value = the value to set the variables to
+-
+- Sets both [[VAR: Parameter().value]] and the linked variable to value.

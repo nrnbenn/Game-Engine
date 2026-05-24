@@ -1,0 +1,7 @@
+- The public facing interface that is linked to a [[OBJ: Component()]]. For example this is used in the components edititor ui.
+-
+- [[VAR: Interface().parentComponent]]
+- [[VAR: Interface().parameters]]
+-
+- [[FUNC: Interface().add_parameter()]]
+- [[FUNC: Interface().update()]]

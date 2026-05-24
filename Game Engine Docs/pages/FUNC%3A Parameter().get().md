@@ -1,0 +1,1 @@
+- Gets the value of the linked variable and sets [[VAR: Parameter().value]] to it, and returns the value.

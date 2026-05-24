@@ -1,0 +1,4 @@
+- PARAMETER:
+	- recursive - whether to recurse through childen (default False)
+-
+- Returns a list of all children. If recursive is False, then it returns all further children fo children ect...

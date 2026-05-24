@@ -1,0 +1,1 @@
+- The name of the variable inside of the [[OBJ: Component()]] object that the parameter is linked to.

@@ -1,0 +1,10 @@
+- A parameter that is linked to a [[OBJ: Interface()]] that represents a single public facing parameter that is used, for example, in the components editor ui.
+-
+- [[VAR: Parameter().initialvalue]]
+- [[VAR: Parameter().value]]
+- [[VAR: Parameter().variablename]]
+- [[VAR: Parameter().interface]]
+-
+- [[FUNC: Parameter().update()]]
+- [[FUNC: Parameter().set()]]
+- [[FUNC: Parameter().get()]]

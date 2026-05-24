@@ -1,0 +1,5 @@
+- PARAMETERS:
+	- name = name to search for
+	- recursive = whether to recurse through children (default False)
+-
+- Similar to [[FUNC: Component().getChildByName()]] however instead of returning the first one it finds, it returns all of them that it finds in a list.

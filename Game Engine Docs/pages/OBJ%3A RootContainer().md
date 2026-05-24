@@ -1,0 +1,18 @@
+- The top parent object that holds all following [[OBJ: Component()]].
+-
+- [[VAR: RootContainer().children]]
+- [[VAR: RootContainer().killScheduleQueue]]
+-
+- [[FUNC: RootContainer().Awake()]]
+- [[FUNC: RootContainer().Start()]]
+- [[FUNC: RootContainer().Tick()]]
+- [[FUNC: RootContainer().Update()]]
+- [[FUNC: RootContainer().add_child()]]
+- [[FUNC: RootContainer().remove_child()]]
+- [[FUNC: RootContainer().getChildByName()]]
+- [[FUNC: RootContainer().getChildByType()]]
+- [[FUNC: RootContainer().getChildrenByName()]]
+- [[FUNC: RootContainer().getChildrenByType()]]
+- [[FUNC: RootContainer().getAllChildren()]]
+- [[FUNC: RootContainer().Instantiate()]]
+- [[FUNC: RootContainer().scheduleForKilling()]]

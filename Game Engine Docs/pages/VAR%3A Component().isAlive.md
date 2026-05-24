@@ -1,0 +1,1 @@
+- A boolean that represents whether the component is still alive or not.

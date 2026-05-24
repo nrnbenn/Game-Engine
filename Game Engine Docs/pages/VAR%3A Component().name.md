@@ -1,0 +1,1 @@
+- A string that stores the name of the component.

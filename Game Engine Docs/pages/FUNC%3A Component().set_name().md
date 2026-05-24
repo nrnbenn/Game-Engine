@@ -1,0 +1,4 @@
+- PARAMETERS:
+	- newname - new name
+-
+- Sets [[VAR: Component().name]] to new name.

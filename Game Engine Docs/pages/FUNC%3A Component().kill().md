@@ -1,0 +1,5 @@
+- Kills the component.
+-
+- Sets [[VAR: Component().isAlive]] to False
+- Calls [[FUNC: RootContainer().scheduleForKilling()]]
+- Calls all callbacks in [[VAR: Component().killCallbacks]]

@@ -1,0 +1,4 @@
+- PARAMETERS:
+	- child - the child to add
+-
+- Adds a child to the component object. The child that is added is from the child parameter.
