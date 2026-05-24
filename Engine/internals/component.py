@@ -11,10 +11,13 @@ class Component():
     def remove_child(self, child):
         self.children.remove(child)
 
-    def set_parent(self, parent)
+    def set_parent(self, parent):
         self.parent.remove_child(self)
         self.parent = parent
         self.parent.add_child(self)
+
+    def set_name(self, newname):
+        self.name = newname
 
     def Start(self):
         pass

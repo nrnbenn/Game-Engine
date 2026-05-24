@@ -58,3 +58,11 @@ class RootContainer():
                 for newSearch in newSearches:
                     toSearch.append(newSearch)
         return(results)
+
+    def Instantiate(self, component, name=None, parent=None):
+        newComponent = component(self)
+        self.add_child(newComponent)
+        if name:
+            newComponent.set_name(name)
+        if parent:
+            newComponent.set_parent(parent)
