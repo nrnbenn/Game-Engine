@@ -2,7 +2,7 @@ class Parameter():
     def __init__(self, variablename, interface, value):
         self.initialvalue = value
         self.value = value
-        self.variablename = name
+        self.variablename = variablename
         self.interface = interface
 
         self.interface.add_parameter(self)
