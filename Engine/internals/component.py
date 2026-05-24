@@ -1,9 +1,12 @@
+from Engine.internals.interface import Interface
+
 class Component():
     def __init__(self, parent):
         self.name = self.__name__
         self.children = []
         self.parent = parent
         self.rootContainer = parent
+        self.interface = Interface(self)
 
     def add_child(self, child):
         self.children.append(child)
@@ -22,7 +25,7 @@ class Component():
     def Start(self):
         pass
     def Tick(self):
-        pass
+        self.interface.update()
 
     def getChildByName(self, name, recursive=False): #returns first one it finds
         result = self.getChildrenByName(name, recursive=recursive)
