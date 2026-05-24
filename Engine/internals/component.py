@@ -22,10 +22,14 @@ class Component():
     def set_name(self, newname):
         self.name = newname
 
+    def Awake(self):
+        pass
     def Start(self):
         pass
     def Tick(self):
         self.interface.update()
+    def Update(self):
+        pass
 
     def getChildByName(self, name, recursive=False): #returns first one it finds
         result = self.getChildrenByName(name, recursive=recursive)

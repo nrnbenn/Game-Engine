@@ -2,6 +2,15 @@ class RootContainer():
     def __init__(self):
         self.children = []
 
+    def Awake(self):
+        pass
+    def Start(self):
+        pass
+    def Tick(self):
+        self.interface.update()
+    def Update(self):
+        pass
+
     def add_child(self, child):
         self.children.append(child)
 
