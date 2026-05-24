@@ -73,7 +73,7 @@ class Component():
     def getAllChildren(self, recursive=False):
         results = []
         toSearch = self.children
-        while not len(toSearch) = 0:
+        while not len(toSearch) == 0:
             popped = toSearch.pop()
             results.append(popped)
             if recursive:
