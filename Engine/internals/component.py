@@ -1,8 +1,9 @@
 class Component():
     def __init__(self, parent):
-        self.name = ""
+        self.name = self.__name__
         self.children = []
         self.parent = parent
+        self.rootContainer = parent
 
     def add_child(self, child):
         self.children.append(child)
@@ -48,17 +49,25 @@ class Component():
         return(results)
 
     def getChildrenByType(self, type, recursive=False): #returns all in a list
-        search = toSearch.pop()
-            if search.name == name:
+        toSearch = self.children
+        results  = []
+        while not len(toSearch) == 0:
+            search = toSearch.pop()
+            if type(search) == type:
                 results.append(search)
             if recursive:
                 newSearches = search.getAllChildren()
                 for newSearch in newSearches:
                     toSearch.append(newSearch)
 
-    def getAllChildren(self):
-        results = self.children
-        for child in results:
-            grandChildren = child.getAllChildren()
-            for grandchild in grandChildren:
-                results.append(grandchild)
+    def getAllChildren(self, recursive=False):
+        results = []
+        toSearch = self.children
+        while not len(toSearch) = 0:
+            popped = toSearch.pop()
+            results.append(popped)
+            if recursive:
+                newSearches = popped.getAllChildren()
+                for newSearch in newSearches:
+                    toSearch.append(newSearch)
+        return(results)
