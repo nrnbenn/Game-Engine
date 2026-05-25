@@ -1,0 +1,1 @@
+- The value assigned to a persistent data object.

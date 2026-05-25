@@ -1,0 +1,1 @@
+- The function that returns a [[OBJ: SaveObject()]] that contains the perisistent data object's data

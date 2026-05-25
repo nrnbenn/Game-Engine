@@ -1,0 +1,2 @@
+class SaveObject(dict):
+    pass

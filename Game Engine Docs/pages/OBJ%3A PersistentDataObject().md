@@ -1,0 +1,11 @@
+- A child of [[OBJ: PersistentDataContainer()]] that holds the actual data that will be saved.
+-
+- PARAMETERS:
+	- name = the name to give the persistent data object
+	- value = the value to assign to the persistent data object
+-
+- [[VAR: PersistentDataObject().value]]
+- [[VAR: PersistentDataObject().name]]
+-
+- [[FUNC: PersistentDataObject().generateSaveObject()]]
+- [[FUNC: PersistentDataObject().fromSaveObject()]]

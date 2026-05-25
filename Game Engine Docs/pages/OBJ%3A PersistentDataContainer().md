@@ -1,0 +1,5 @@
+- INHERITS FROM dict()
+-
+- [[FUNC: PersistentDataContainer().addPersistentData()]]
+- [[FUNC: PersistentDataContainer().generateSaveObject()]]
+- [[FUNC: PersistentDataContainer().fromSaveObject()]]

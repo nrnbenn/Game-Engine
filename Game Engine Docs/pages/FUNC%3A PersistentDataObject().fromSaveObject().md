@@ -1,0 +1,4 @@
+- PARAMETERS:
+	- saveObject - the save object to create from
+-
+- **Returns an object** that reflects the data given in saveObject

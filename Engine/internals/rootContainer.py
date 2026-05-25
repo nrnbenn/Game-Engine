@@ -1,4 +1,5 @@
 from Engine.internals.interface import Interface
+from Engine.internals.persistentDataContainer import PersistentDataContainer
 
 class RootContainer():
     def __init__(self):
@@ -6,6 +7,7 @@ class RootContainer():
         self.killScheduleQueue = []
 
         self.interface = Interface(self)
+        self.persistentDataContainer = PersistentDataContainer()
 
         self.running = False
         self.game_running = False

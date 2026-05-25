@@ -1,0 +1,5 @@
+- PARAMETERS:
+	- name - the name of the new [[OBJ: PersistentDataObject()]]
+	- value - the value to assign to the new [[OBJ: PersistentDataObject()]]
+-
+- Creates a new [[OBJ: PersistentDataObject()]] and adds it to the dictionary under the key name. Sets the value and name of the new object to the parameters value and name.

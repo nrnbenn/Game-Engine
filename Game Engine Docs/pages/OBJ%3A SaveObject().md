@@ -1,0 +1,3 @@
+- INHERITS FROM dict()
+-
+- The object that contains data that is ready to be saved.

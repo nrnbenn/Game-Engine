@@ -1,0 +1,1 @@
+- Creates a [[OBJ: SaveObject()]] and returns it. The save object has the data of the current persistent data container.

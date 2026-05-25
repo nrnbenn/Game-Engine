@@ -5,6 +5,7 @@
 - [[VAR: Component().parent]]
 - [[VAR: Component().rootContainer]]
 - [[VAR: Component().interface]]
+- [[VAR: Component().persistentDataContainer]]
 - [[VAR: Component().isAlive]]
 - [[VAR: Component().killCallbacks]]
 -

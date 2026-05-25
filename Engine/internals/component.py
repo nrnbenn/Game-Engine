@@ -1,4 +1,5 @@
 from Engine.internals.interface import Interface
+from Engine.internals.persistentDataContainer import PersistentDataContainer
 
 class Component():
     def __init__(self, parent):
@@ -7,6 +8,7 @@ class Component():
         self.parent = parent
         self.rootContainer = parent
         self.interface = Interface(self)
+        self.persistentDataContainer = PersistentDataContainer()
         self.isAlive = True
         self.killCallbacks= []
 
