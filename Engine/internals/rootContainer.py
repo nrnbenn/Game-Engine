@@ -1,7 +1,11 @@
+from Engine.internals.interface import Interface
+
 class RootContainer():
     def __init__(self):
         self.children = []
         self.killScheduleQueue = []
+
+        self.interface = Interface(self)
 
         self.running = False
         self.game_running = False

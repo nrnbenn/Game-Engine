@@ -2,6 +2,7 @@
 -
 - [[VAR: RootContainer().children]]
 - [[VAR: RootContainer().killScheduleQueue]]
+- [[VAR: RootContainer().interface]]
 - [[VAR: RootContainer().running]]
 - [[VAR: RootContainer().game_running]]
 - [[VAR: RootContainer().game_is_paused]]
