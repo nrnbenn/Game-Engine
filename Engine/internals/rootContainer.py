@@ -84,6 +84,7 @@ class RootContainer():
             newComponent.set_name(name)
         if parent:
             newComponent.set_parent(parent)
+        return(newComponent)
 
     def scheduleForKilling(self, component):
         self.killScheduleQueue.append(component)
