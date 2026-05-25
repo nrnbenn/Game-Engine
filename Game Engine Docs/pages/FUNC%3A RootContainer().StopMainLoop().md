@@ -1,0 +1,1 @@
+- Stops the main game engine loop

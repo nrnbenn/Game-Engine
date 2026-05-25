@@ -1,0 +1,1 @@
+- Pauses the game loop.

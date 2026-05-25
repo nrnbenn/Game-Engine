@@ -3,13 +3,21 @@ class RootContainer():
         self.children = []
         self.killScheduleQueue = []
 
+        self.running = False
+        self.game_running = False
+        self.game_is_paused = False
+
     def Awake(self):
         pass
     def Start(self):
         pass
     def Tick(self):
-        self.interface.update()
+        pass
     def Update(self):
+        #do scheduled killing
+        for kill in self.killScheduleQueue:
+            kill.parent.remove_child(kill)
+    def Stop(self):
         pass
 
     def add_child(self, child):
@@ -79,3 +87,42 @@ class RootContainer():
 
     def scheduleForKilling(self, component):
         self.killScheduleQueue.append(component)
+
+    def MainLoop(self):
+        game_started = False #used to know if to send Start()
+        self.performOnAllChildren(lambda c: c.Awake()) #send Awake()
+        self.Awake()
+        while self.running:
+            self.performOnAllChildren(lambda c: c.Tick()) #send Tick()
+            self.Tick()
+            if self.game_running and (not self.game_is_paused): #if ticking needs to happen
+                if not game_started:
+                    game_started = True
+                    self.performOnAllChildren(lambda c: c.Start()) #send Start()
+                    self.Start()
+                self.performOnAllChildren(lambda c: c.Update()) #send Update()
+                self.Update()
+            elif not self.game_is_paused: #if ticking does not happen but the game is not paused (aka. if the game stops)
+                self.performOnAllChildren(lambda c: c.Stop()) #send Stop()
+                self.Stop()
+                game_started = False
+
+    def performOnAllChildren(self, action):
+        allChildren = self.getAllChildren(recursive=True)
+        for child in allChildren:
+            action(child)
+
+    def StartMainLoop(self):
+        self.running = True
+        self.MainLoop()
+    def StopMainLoop(self):
+        self.game_running = False
+        self.running = False
+    def StartGame(self):
+        self.game_running = True
+    def StopGame(self):
+        self.game_running = False
+    def PauseGame(self):
+        self.game_is_paused = True
+    def ResumeGame(self):
+        self.game_is_paused = False

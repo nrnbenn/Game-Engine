@@ -16,6 +16,7 @@
 - [[FUNC: Component().Start()]]
 - [[FUNC: Component().Tick()]]
 - [[FUNC: Component().Update()]]
+- [[FUNC: Component().Stop()]]
 - [[FUNC: Component().kill()]]
 - [[FUNC: Component().getChildByName()]]
 - [[FUNC: Component().getChildByType()]]

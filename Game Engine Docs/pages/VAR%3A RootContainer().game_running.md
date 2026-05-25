@@ -1,0 +1,1 @@
+- A boolean that represents whether the game is running or not.

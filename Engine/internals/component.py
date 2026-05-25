@@ -32,6 +32,8 @@ class Component():
         self.interface.update()
     def Update(self):
         pass
+    def Stop(self):
+        pass
 
     def kill(self):
         self.isAlive = False

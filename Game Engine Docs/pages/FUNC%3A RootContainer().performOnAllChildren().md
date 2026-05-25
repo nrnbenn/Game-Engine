@@ -1,0 +1,5 @@
+- PARAMETERS:
+	- action - action to perform
+-
+- Performs action action on all children (recursive)
+- Action is a function or lambda that is in the format action(objectToPerformOn)
