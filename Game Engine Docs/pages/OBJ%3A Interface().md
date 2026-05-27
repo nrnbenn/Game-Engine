@@ -1,5 +1,9 @@
 - The public facing interface that is linked to a [[OBJ: Component()]]. For example this is used in the components edititor ui.
 -
+- PARAMETERS:
+	- parentComponent - the [[OBJ: Component()]] that the interface is linked to.
+	- fromSave = whether the component is generated from a save or not (default False)
+-
 - [[VAR: Interface().parentComponent]]
 - [[VAR: Interface().parameters]]
 -
@@ -7,3 +11,4 @@
 - [[FUNC: Interface().update()]]
 - [[FUNC: Interface().generateSaveObject()]]
 - [[FUNC: Interface().fromSaveObject()]]
+- [[FUNC: Interface().Initiate()]]

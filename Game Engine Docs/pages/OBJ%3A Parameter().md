@@ -1,5 +1,11 @@
 - A parameter that is linked to a [[OBJ: Interface()]] that represents a single public facing parameter that is used, for example, in the components editor ui.
 -
+- PARAMETERS:
+	- variablename = the name of the parameter
+	- interface = the [[OBJ: Interface()]] taht the parameter is linked to
+	- value = the value to set the parameter to
+	- fromSave = whether the component is generated from a save or not (default False)
+-
 - [[VAR: Parameter().initialvalue]]
 - [[VAR: Parameter().value]]
 - [[VAR: Parameter().variablename]]
@@ -10,3 +16,4 @@
 - [[FUNC: Parameter().get()]]
 - [[FUNC: Parameter().generateSaveObject()]]
 - [[FUNC: Parameter().fromSaveObject()]]
+- [[FUNC: Parameter().Initiate()]]

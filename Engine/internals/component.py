@@ -4,7 +4,7 @@ from Engine.internals.saveObject import SaveObject
 from saveLoad import savers, loaders
 
 class Component():
-    def __init__(self, parent):
+    def __init__(self, parent, fromSave=False):
         self.name = self.__name__
         self.children = []
         self.parent = parent
@@ -13,6 +13,9 @@ class Component():
         self.persistentDataContainer = PersistentDataContainer()
         self.isAlive = True
         self.killCallbacks= []
+
+        if not fromSave:
+            self.Initiate()
 
     def add_child(self, child):
         self.children.append(child)
@@ -37,6 +40,8 @@ class Component():
     def Update(self):
         pass
     def Stop(self):
+        pass
+    def Initiate(self):
         pass
 
     def kill(self):
@@ -106,4 +111,4 @@ class Component():
         return(SaveObject())
 
     def fromSaveObject(self, saveObject):
-        pass
+        return(Component(None, True))

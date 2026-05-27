@@ -2,7 +2,7 @@ from Engine.internals.saveLoad import savers, loaders
 from Engine.internals.saveObject import SaveObject
 
 class Parameter():
-    def __init__(self, variablename, interface, value):
+    def __init__(self, variablename, interface, value, fromSave=False):
         self.initialvalue = value
         self.value = value
         self.variablename = variablename
@@ -11,6 +11,9 @@ class Parameter():
         self.interface.add_parameter(self)
 
         self.set(value)
+
+        if not fromSave:
+            self.Initiate()
 
     def update(self):
         value = getattr(self.interface.parentComponent, self.variablename)
@@ -34,4 +37,7 @@ class Parameter():
         return(SaveObject())
 
     def fromSaveObject(self, saveObject):
+        return(Parameter(None, None, None, True))
+
+    def Initiate(self):
         pass

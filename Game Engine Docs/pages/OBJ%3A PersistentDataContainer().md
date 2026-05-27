@@ -3,3 +3,4 @@
 - [[FUNC: PersistentDataContainer().addPersistentData()]]
 - [[FUNC: PersistentDataContainer().generateSaveObject()]]
 - [[FUNC: PersistentDataContainer().fromSaveObject()]]
+- [[FUNC: PersistentDataContainer().Initiate()]]

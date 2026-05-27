@@ -3,9 +3,11 @@
 - PARAMETERS:
 	- name = the name to give the persistent data object
 	- value = the value to assign to the persistent data object
+	- fromSave = whether the component is generated from a save or not (default False)
 -
 - [[VAR: PersistentDataObject().value]]
 - [[VAR: PersistentDataObject().name]]
 -
 - [[FUNC: PersistentDataObject().generateSaveObject()]]
 - [[FUNC: PersistentDataObject().fromSaveObject()]]
+- [[FUNC: PersistentDataObject().Initiate()]]

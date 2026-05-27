@@ -1,5 +1,8 @@
 - The top parent object that holds all following [[OBJ: Component()]].
 -
+- PARAMETERS:
+	- fromSave = whether the component is generated from a save or not (default False)
+-
 - [[VAR: RootContainer().children]]
 - [[VAR: RootContainer().killScheduleQueue]]
 - [[VAR: RootContainer().interface]]
@@ -13,6 +16,7 @@
 - [[FUNC: RootContainer().Tick()]]
 - [[FUNC: RootContainer().Update()]]
 - [[FUNC: RootContainer().Stop()]]
+- [[FUNC: RootContainer().Initiate()]]
 - [[FUNC: RootContainer().add_child()]]
 - [[FUNC: RootContainer().remove_child()]]
 - [[FUNC: RootContainer().getChildByName()]]

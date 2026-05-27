@@ -2,9 +2,12 @@ from Engine.internals.saveObject import SaveObject
 from Engine.internals.saveLoad import savers, loaders
 
 class Interface():
-    def __init__(self, parentComponent):
+    def __init__(self, parentComponent, fromSave=False):
         self.parentComponent = parentComponent
         self.parameters = []
+
+        if not fromSave:
+            self.Initiate()
 
     def add_parameter(self, parameter):
         self.parameters.append(parameter)
@@ -24,4 +27,7 @@ class Interface():
         return(SaveObject())
 
     def fromSaveObject(self, saveObject):
+        return(Interface(None, True))
+
+    def Initiate(self):
         pass

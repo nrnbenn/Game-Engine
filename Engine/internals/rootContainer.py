@@ -4,7 +4,7 @@ from Engine.internals.saveObject import SaveObject
 from Engine.internals.saveLoad import savers, loaders
 
 class RootContainer():
-    def __init__(self):
+    def __init__(self, fromSave=False):
         self.children = []
         self.killScheduleQueue = []
 
@@ -14,6 +14,9 @@ class RootContainer():
         self.running = False
         self.game_running = False
         self.game_is_paused = False
+
+        if not fromSave:
+            self.Initiate()
 
     def Awake(self):
         pass
@@ -26,6 +29,8 @@ class RootContainer():
         for kill in self.killScheduleQueue:
             kill.parent.remove_child(kill)
     def Stop(self):
+        pass
+    def Initiate(self):
         pass
 
     def add_child(self, child):
@@ -146,4 +151,4 @@ class RootContainer():
         return(SaveObject())
 
     def fromSaveObject(self, saveObject):
-        pass
+        return(RootContainer(True))

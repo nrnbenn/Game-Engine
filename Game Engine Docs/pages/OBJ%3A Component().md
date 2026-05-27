@@ -1,5 +1,9 @@
 - An object that influences the game.
 -
+- PARAMETERS:
+	- parent = the parent to assign to the component
+	- fromSave = whether the component is generated from a save or not (default False)
+-
 - [[VAR: Component().name]]
 - [[VAR: Component().children]]
 - [[VAR: Component().parent]]
@@ -18,6 +22,7 @@
 - [[FUNC: Component().Tick()]]
 - [[FUNC: Component().Update()]]
 - [[FUNC: Component().Stop()]]
+- [[FUNC: Component().Initiate()]]
 - [[FUNC: Component().kill()]]
 - [[FUNC: Component().getChildByName()]]
 - [[FUNC: Component().getChildByType()]]
