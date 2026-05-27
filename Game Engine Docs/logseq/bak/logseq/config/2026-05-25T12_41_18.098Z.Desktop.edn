@@ -299,7 +299,7 @@
  ;;  :charge-range    600}   ; Default value: 600
 
  ;; Favorites to list on the left sidebar
- :favorites ["engine" "GAME ENGINE"]
+ :favorites ["GAME ENGINE"]
 
  ;; Set flashcards interval.
  ;; Expected value:

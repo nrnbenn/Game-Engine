@@ -2,8 +2,9 @@ from Engine.internals.saveObject import SaveObject
 from Engine.internals.peristentDataObject import PersistentDataObject, persistentDataLoaders, persistentDataSavers
 
 class PersistentDataContainer(dict):
-    def addPersistentData(self, name, data):
-        self[name] = PersistentDataObject(name, data)
+    def addPersistentData(self, dataObject, name):
+        self[name] = dataObject
+        self[name].name = name
 
     def generateSaveObject(self):
         saveObject = SaveObject()
