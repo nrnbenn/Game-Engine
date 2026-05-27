@@ -1,0 +1,1 @@
+- The type of object that the saveobject is represented.

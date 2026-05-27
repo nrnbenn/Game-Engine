@@ -1,0 +1,1 @@
+- Similar to [[VAR: saveLoad.py.savers]] however with functions such as [[FUNC: Component().fromSaveObject()]]

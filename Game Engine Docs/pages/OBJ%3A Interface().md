@@ -5,3 +5,5 @@
 -
 - [[FUNC: Interface().add_parameter()]]
 - [[FUNC: Interface().update()]]
+- [[FUNC: Interface().generateSaveObject()]]
+- [[FUNC: Interface().fromSaveObject()]]

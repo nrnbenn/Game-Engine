@@ -24,3 +24,5 @@
 - [[FUNC: Component().getChildrenByName()]]
 - [[FUNC: Component().getChildrenByType()]]
 - [[FUNC: Component().getAllChildren()]]
+- [[FUNC: Component().generateSaveObject()]]
+- [[FUNC: Component().fromSaveObject()]]

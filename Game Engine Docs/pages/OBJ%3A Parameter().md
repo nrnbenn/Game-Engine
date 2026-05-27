@@ -8,3 +8,5 @@
 - [[FUNC: Parameter().update()]]
 - [[FUNC: Parameter().set()]]
 - [[FUNC: Parameter().get()]]
+- [[FUNC: Parameter().generateSaveObject()]]
+- [[FUNC: Parameter().fromSaveObject()]]

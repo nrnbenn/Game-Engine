@@ -1,3 +1,6 @@
+from Engine.internals.saveObject import SaveObject
+from Engine.internals.saveLoad import savers, loaders
+
 class Interface():
     def __init__(self, parentComponent):
         self.parentComponent = parentComponent
@@ -10,3 +13,15 @@ class Interface():
     def update(self):
         for parameter in self.parameters:
             parameter.update()
+
+    def __init_subclass__(cls): #called when a class that inherits from this object is defined
+        pass
+        #register data serializers
+        savers[cls] = cls.generateSaveObject
+        loaders[cls] = cls.fromSaveObject
+
+    def generateSaveObject(self):
+        return(SaveObject())
+
+    def fromSaveObject(self, saveObject):
+        pass

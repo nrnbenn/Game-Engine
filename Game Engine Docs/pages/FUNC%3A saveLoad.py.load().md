@@ -1,0 +1,1 @@
+- Returns a saveObject retrieved from disk.

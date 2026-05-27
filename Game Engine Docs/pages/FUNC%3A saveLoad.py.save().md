@@ -1,0 +1,4 @@
+- PARAMETERS:
+	- saveObject = the saveObject to save on disk
+-
+- Saves a [[OBJ: SaveObject()]] saveObject to disk.

@@ -1,2 +1,4 @@
 class SaveObject(dict):
-    pass
+    def __init__(self, objectType, iterable=None):
+        super().__init__(iterable or {})
+        self.objectType = objectType

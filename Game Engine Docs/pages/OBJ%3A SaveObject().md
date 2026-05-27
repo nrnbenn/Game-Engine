@@ -1,3 +1,9 @@
 - INHERITS FROM dict()
 -
 - The object that contains data that is ready to be saved.
+-
+- PARAMETERS:
+	- objectType = the object type that the saveobject is representing
+	- iterable = The dictionary inherited parameter used to fill the dictionary on initialisation (default=None)
+-
+- [[VAR: SaveObject().objectType]]

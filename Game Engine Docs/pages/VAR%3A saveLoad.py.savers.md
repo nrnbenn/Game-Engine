@@ -1,0 +1,2 @@
+- A dictionary containing all the methods that generate a save object, for example [[FUNC: Component().generateSaveObject()]]
+- Key is the object type, value is the function.

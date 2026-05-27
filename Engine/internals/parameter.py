@@ -1,3 +1,6 @@
+from Engine.internals.saveLoad import savers, loaders
+from Engine.internals.saveObject import SaveObject
+
 class Parameter():
     def __init__(self, variablename, interface, value):
         self.initialvalue = value
@@ -20,3 +23,15 @@ class Parameter():
     def get(self):
         self.update()
         return(self.value)
+    
+    def __init_subclass__(cls): #called when a class that inherits from this object is defined
+        pass
+        #register data serializers
+        savers[cls] = cls.generateSaveObject
+        loaders[cls] = cls.fromSaveObject
+
+    def generateSaveObject(self):
+        return(SaveObject())
+
+    def fromSaveObject(self, saveObject):
+        pass

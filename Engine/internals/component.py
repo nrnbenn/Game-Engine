@@ -1,5 +1,7 @@
 from Engine.internals.interface import Interface
 from Engine.internals.persistentDataContainer import PersistentDataContainer
+from Engine.internals.saveObject import SaveObject
+from saveLoad import savers, loaders
 
 class Component():
     def __init__(self, parent):
@@ -93,3 +95,15 @@ class Component():
                 for newSearch in newSearches:
                     toSearch.append(newSearch)
         return(results)
+
+    def __init_subclass__(cls): #called when a class that inherits from this object is defined
+        pass
+        #register data serializers
+        savers[cls] = cls.generateSaveObject
+        loaders[cls] = cls.fromSaveObject
+
+    def generateSaveObject(self):
+        return(SaveObject())
+
+    def fromSaveObject(self, saveObject):
+        pass

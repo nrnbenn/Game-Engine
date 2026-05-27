@@ -30,3 +30,5 @@
 - [[FUNC: RootContainer().StopGame()]]
 - [[FUNC: RootContainer().PauseGame()]]
 - [[FUNC: RootContainer().ResumeGame()]]
+- [[FUNC: RootContainer().generateSaveObject()]]
+- [[FUNC: RootContainer().fromSaveObject()]]
