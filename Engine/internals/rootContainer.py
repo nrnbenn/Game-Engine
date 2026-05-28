@@ -2,6 +2,7 @@ from Engine.internals.interface import Interface
 from Engine.internals.persistentDataContainer import PersistentDataContainer
 from Engine.internals.saveObject import SaveObject
 from Engine.internals.saveLoad import savers, loaders, loadObject
+from editorEntry import reload
 
 class RootContainer():
     def __init__(self, fromSave=False):
@@ -14,6 +15,8 @@ class RootContainer():
         self.running = False
         self.game_running = False
         self.game_is_paused = False
+
+        self.rootUiUpdate = None
 
         if not fromSave:
             self.Initiate()
@@ -103,6 +106,7 @@ class RootContainer():
         self.killScheduleQueue.append(component)
 
     def MainLoop(self):
+        self.rootUiUpdate() #update the root ui
         game_started = False #used to know if to send Start()
         self.performOnAllChildren(lambda c: c.Awake()) #send Awake()
         self.Awake()
@@ -132,6 +136,7 @@ class RootContainer():
     def StopMainLoop(self):
         self.game_running = False
         self.running = False
+        reload(withSaveObject=self.generateSaveObject())
     def StartGame(self):
         self.game_running = True
     def StopGame(self):

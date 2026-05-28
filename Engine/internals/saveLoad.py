@@ -1,10 +1,10 @@
 from Engine.internals.saveObject import SaveObject
 
-def save(saveObject):
-    #save the saveObject to disk
-    pass
+def save(saveObject, filePath):
+    if filePath:
+        pass
 
-def load():
+def load(filePath):
     #get the saveObject from disk
     return(SaveObject())
 
@@ -13,5 +13,3 @@ def loadObject(data):
 
 savers = {}
 loaders = {}
-
-filePath = ""
