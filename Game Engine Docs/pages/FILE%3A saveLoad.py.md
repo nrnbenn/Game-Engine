@@ -1,5 +1,6 @@
 - [[FUNC: saveLoad.py.save()]]
 - [[FUNC: saveLoad.py.load()]]
+- [[FUNC: saveLoad.py.loadObject()]]
 -
 - [[VAR: saveLoad.py.savers]]
 - [[VAR: saveLoad.py.loaders]]

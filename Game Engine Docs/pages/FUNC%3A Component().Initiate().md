@@ -2,3 +2,6 @@
 - Called when the object is first created - e.g. not created from loading a savefile
 -
 - Used for default settings e.g. a 3d object has these child components, but you wouldn't want the components to be created again when it is loaded.
+-
+- NOTE:
+	- Initiate() is not called when the engine restarts after game ends.

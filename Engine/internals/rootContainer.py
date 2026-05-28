@@ -1,7 +1,7 @@
 from Engine.internals.interface import Interface
 from Engine.internals.persistentDataContainer import PersistentDataContainer
 from Engine.internals.saveObject import SaveObject
-from Engine.internals.saveLoad import savers, loaders
+from Engine.internals.saveLoad import savers, loaders, loadObject
 
 class RootContainer():
     def __init__(self, fromSave=False):
@@ -148,7 +148,23 @@ class RootContainer():
         loaders[cls] = cls.fromSaveObject
 
     def generateSaveObject(self):
-        return(SaveObject())
+        save = SaveObject(RootContainer)
+        
+        #children
+        save["children"] = []
+        for child in self.children:
+            save["children"].append(child.generateSaveObject())
+        #interface is not saved (see component.py)
+        #persistentDataContainer
+        save["peristentDatContainer"] = self.persistentDataContainer.generateSaveObject()
 
-    def fromSaveObject(self, saveObject):
-        return(RootContainer(True))
+    def fromSaveObject(cls, saveObject):
+        newRootContainer = RootContainer(fromSave=True)
+        #name
+        for childSaveObject in saveObject["children"]:
+            newChild = loadObject(childSaveObject)
+            newChild.parent = newRootContainer #set the parent of the new child to the new rootcontainer as parents are done on the 'layer' before
+            newRootContainer.children.append(newChild)
+        #persistentDataContainer
+        newRootContainer.persistentDataContainer = loadObject(saveObject["persistentDataContainer"])
+        return(newRootContainer)

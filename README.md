@@ -2,6 +2,6 @@
 
 # TODO:
  - Do Saving/Loading
- - Make Editor Launcher
+ - Make Editor Launcher - remember component.py:35
  - Make component register
- - Maybe make persistentDataObjects and parameters that are user createdd inherit from both the type that they want and also the persistenDataObject so that you dont have to do obj.value to get its value - it would just be the value already.
+ - Revamp parameters and persistentDataObjects to make it inherited and also to make saving work properly in parameters

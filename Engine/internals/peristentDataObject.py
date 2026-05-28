@@ -9,6 +9,9 @@ class PersistentDataObject():
         if not fromSave:
             self.Initiate()
 
+    def Initiate(self):
+        pass
+
     def __init_subclass__(cls): #called when a class that inherits from this object is defined
         pass
         #register data serializers
@@ -16,10 +19,13 @@ class PersistentDataObject():
         loaders[cls] = cls.fromSaveObject
 
     def generateSaveObject(self):
-        return(SaveObject())
+        save = SaveObject(PersistentDataObject)
+        #name
+        save["name"] = self.name
+        save["value"] = f"THIS PERSISTENT DATA OBJECT HAS NOT OVERIDDEN GENERATESAVEOBJECT(). "
+        return(save)
 
-    def fromSaveObject(self, saveObject):
-        return(PersistentDataObject(None, None, True))
-
-    def Initiate(self):
-        pass
+    def fromSaveObject(cls, saveObject):
+        newObject = PersistentDataObject("", "", fromSave=True)
+        newObject.name = saveObject["name"]
+        newObject.value = (str(saveObject["value"]) + "THIS PERSISTENT DATA OBJECT HAS NOT OVERRIDEN FROMSAVEOBJECT(). ")

@@ -1,7 +1,7 @@
 from Engine.internals.interface import Interface
 from Engine.internals.persistentDataContainer import PersistentDataContainer
 from Engine.internals.saveObject import SaveObject
-from saveLoad import savers, loaders
+from saveLoad import savers, loaders, loadObject
 
 class Component():
     def __init__(self, parent, fromSave=False):
@@ -32,6 +32,7 @@ class Component():
         self.name = newname
 
     def Awake(self):
+        #set rootcontainer
         pass
     def Start(self):
         pass
@@ -108,7 +109,30 @@ class Component():
         loaders[cls] = cls.fromSaveObject
 
     def generateSaveObject(self):
-        return(SaveObject())
+        save = SaveObject(Component)
+        #name
+        save["name"] = self.name
+        #children
+        save["children"] = []
+        for child in self.children:
+            save["children"].append(child.generateSaveObject())
+        #interface
+        save["interface"] = self.interface.generateSaveObject()
+        #persistentDataContainer
+        save["persistentDataContainer"] = self.persistentDataContainer.generateSaveObject()
+        return(save)
 
-    def fromSaveObject(self, saveObject):
-        return(Component(None, True))
+    def fromSaveObject(cls, saveObject):
+        newComponent = Component(None, fromSave=True)
+        #name
+        newComponent.name = saveObject["name"]
+        #children
+        for childSaveObject in saveObject["children"]:
+            newChild = loadObject(childSaveObject)
+            #parent of newComponent is done on the 'layer' previously
+            newChild.parent = newComponent #set the parent for the child
+            newComponent.children.append(newChild)
+        #rootcontainer is done in awake() as we have no reference yet
+        #interface is never saved as nothing in interface is persistent, and it would lead to serious ergonomic issues if it was saved
+        #persistentDataContainer
+        newComponent.persistentDataContainer = loadObject[saveObject["persistentDataContainer"]]

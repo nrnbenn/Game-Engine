@@ -1,1 +1,4 @@
 - A list of callbacks that are called when the component is killed with [[FUNC: Component().kill()]].
+-
+- NOTE:
+	- You are strongly advised to add killCallbacks during [[FUNC: Component().Awake()]] or [[FUNC: Component().Start()]] . This is because killcallbacks are not saved, and therefore doing it in [[FUNC: Component().Initiate()]] would restore killcallbacks on reload, as initiate is only called when the component is newly created. Also doing it in [[FUNC: Component().Initiate()]] is unsafe as you cannot guarantee that all objects, and thus the object you are referencing, have been created yet.

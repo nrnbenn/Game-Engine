@@ -1,23 +1,29 @@
 from Engine.internals.saveObject import SaveObject
 from Engine.internals.peristentDataObject import PersistentDataObject
-from Engine.internals.saveLoad import savers, loaders
+from Engine.internals.saveLoad import savers, loaders, loadObject
 
 class PersistentDataContainer(dict):
-    def addPersistentData(self, dataObject, name, fromSave=False):
-        self[name] = dataObject
-        self[name].name = name
-
+    def __init__(self, fromSave=False, iterable=None):
+        super().__init__(iterable or {})
         if not fromSave:
             self.Initiate()
 
+    def addPersistentData(self, dataObject, name, overrideCurrentData=False):
+        if (not name in self) or ((name in self) and overrideCurrentData):
+            self[name] = dataObject
+            self[name].name = name
+
     def generateSaveObject(self):
-        saveObject = SaveObject()
+        saveObject = SaveObject(PersistentDataContainer)
         for key in self:
-            saveObject[key] = self[key]
+            saveObject[key] = self[key].generateSaveObject()
         return(saveObject)
     
-    def fromSaveObject(self, saveObject):
-        return(PersistentDataContainer(None, None, True))
+    def fromSaveObject(cls, saveObject):
+        newContainer = PersistentDataContainer(fromSave=True)
+        for key in saveObject:
+            newContainer[key] = loadObject(saveObject[key])
+        return(newContainer)
 
     def __init_subclass__(cls): #called when a class that inherits from this object is defined
         pass

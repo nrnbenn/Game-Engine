@@ -1,0 +1,4 @@
+- PARAMETER:
+	- data - a [[OBJ: SaveObject()]] to load from
+-
+- Loads an object using the [[OBJ: SaveObject()]] in data using the function in [[VAR: saveLoad.py.loaders]]

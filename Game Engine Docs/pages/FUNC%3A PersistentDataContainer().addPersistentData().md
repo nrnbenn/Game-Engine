@@ -1,5 +1,6 @@
 - PARAMETERS:
 	- dataObject - the [[OBJ: PersistentDataObject()]] to add
 	- name - the name of the new [[OBJ: PersistentDataObject()]]
+	- overrideCurrentData - whether to replace the data if it already exists (default False)
 - Adds dataObject to the dict under the key name. Sets the dataObject's [[VAR: PersistentDataObject().name]] to name.
 -
